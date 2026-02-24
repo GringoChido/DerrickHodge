@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Derrick Hodge</title>
+  <meta name="description" content="Composer, producer, multi-instrumentalist. Blue Note Recording Artist. Two-time Grammy winner. Learn about Derrick Hodge's career, disciplines, and legacy.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bg: '#050505',
+            surface: '#0a0a0a',
+            card: '#111',
+            white60: 'rgba(255,255,255,0.6)',
+            white20: 'rgba(255,255,255,0.2)',
+            white10: 'rgba(255,255,255,0.1)',
+            accent: '#e34510',
+          },
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+        }
+      }
+    }
+  </script>
+  <style>
+    * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: #050505; color: #fff; }
+    a, button { transition: opacity 0.2s ease, color 0.2s ease; }
+    a:focus-visible { outline: 2px solid #e34510; outline-offset: 2px; }
+    .heading-xl {
+      font-size: clamp(3rem, 8vw, 7.5rem);
+      line-height: 0.95; letter-spacing: -0.02em; font-weight: 800; text-transform: uppercase;
+    }
+    .heading-lg {
+      font-size: clamp(2rem, 5vw, 4.5rem);
+      line-height: 1; letter-spacing: -0.02em; font-weight: 700; text-transform: uppercase;
+    }
+    .heading-md {
+      font-size: clamp(1.5rem, 3.5vw, 2.75rem);
+      line-height: 1.1; letter-spacing: -0.01em; font-weight: 700; text-transform: uppercase;
+    }
+    .mobile-nav { transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+    .mobile-nav.open { transform: translateX(0); }
+
+    /* Consistent list style site-wide */
+    .credit-row {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding: 1rem 0;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 1.5rem;
+      font-size: 13px;
+      align-items: baseline;
+    }
+    .credit-row:last-child { border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .credit-row .year { color: #fff; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; }
+    .credit-row .desc { color: rgba(255,255,255,0.6); }
+    .credit-row .tag { color: rgba(255,255,255,0.6); text-align: right; }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-bg/90 backdrop-blur-md">
+    <div class="max-w-[1200px] mx-auto flex items-center justify-between px-6 md:px-10 py-5">
+      <a href="/" class="flex items-center gap-2">
+        <img src="/brand_assets/logo.png" alt="Derrick Hodge" class="h-[80px] w-auto" style="filter: brightness(0) invert(1);">
+      </a>
+      <div class="hidden md:flex items-center gap-2">
+        <nav class="flex items-center gap-6">
+          <a href="/" class="text-[12px] uppercase tracking-[0.08em] text-white60 hover:text-white">Home</a>
+          <a href="/about.html" class="text-[12px] uppercase tracking-[0.08em] text-white hover:text-white">About</a>
+          <a href="/work.html" class="text-[12px] uppercase tracking-[0.08em] text-white60 hover:text-white">Work</a>
+          <a href="/color-of-noize.html" class="text-[12px] uppercase tracking-[0.08em] text-white60 hover:text-white">Color of Noize</a>
+          <a href="/contact.html" class="text-[12px] uppercase tracking-[0.08em] text-white60 hover:text-white">Contact</a>
+        </nav>
+      </div>
+      <button id="menuBtn" class="md:hidden flex flex-col gap-[5px] w-6" aria-label="Menu">
+        <span class="block h-[1.5px] w-full bg-white" id="b1"></span>
+        <span class="block h-[1.5px] w-full bg-white" id="b2"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Nav -->
+  <div id="mobileNav" class="mobile-nav fixed inset-0 z-40 bg-bg flex flex-col items-center justify-center gap-8 md:hidden">
+    <a href="/" class="text-3xl font-bold uppercase" onclick="toggleMenu()">Home</a>
+    <a href="/about.html" class="text-3xl font-bold uppercase" onclick="toggleMenu()">About</a>
+    <a href="/work.html" class="text-3xl font-bold uppercase" onclick="toggleMenu()">Work</a>
+    <a href="/color-of-noize.html" class="text-3xl font-bold uppercase" onclick="toggleMenu()">Color of Noize</a>
+    <a href="/contact.html" class="text-3xl font-bold uppercase" onclick="toggleMenu()">Contact</a>
+  </div>
+
+
+  <!-- PAGE HERO -->
+  <section class="min-h-[60vh] flex flex-col justify-end px-6 md:px-10 pt-40 pb-20">
+    <div class="max-w-[1200px] mx-auto w-full">
+      <p class="text-[11px] text-accent uppercase tracking-[0.12em] mb-6">About</p>
+      <h1 class="heading-xl max-w-[900px]">One of our moment's most complete and complex musicians.</h1>
+    </div>
+  </section>
+
+
+  <!-- BIO -->
+  <section class="bg-bg py-24 md:py-32 px-6 md:px-10">
+    <div class="max-w-[1200px] mx-auto">
+      <div class="grid md:grid-cols-[1fr_auto] gap-16 items-start">
+        <div>
+          <p class="text-[15px] md:text-[17px] text-white60 leading-[1.7] mb-6 max-w-xl">
+            A prolific composer, musical director, bandleader, producer, bassist and advocate, Hodge has played on some of music's most iconic albums, written and performed breakthrough orchestral arrangements and compositions, scored an impressive catalogue of film and television work and created evocative sonic installations for prestigious cultural institutions, all alongside his work as an activist in the field of emerging young musicians.
+          </p>
+          <p class="text-[15px] md:text-[17px] text-white60 leading-[1.7] mb-6 max-w-xl">
+            Two Grammys. Sundance Composer Fellow. Motif Award recipient. His playing on Common's <em>BE</em> has been officially recognized as one of the Top 20 Basslines in Hip Hop History.
+          </p>
+          <p class="text-[15px] md:text-[17px] text-white60 leading-[1.7] mb-6 max-w-xl">
+            Hodge describes his career as "speaking existence into possibility"; driven by a passion for music rather than genre, he is an artist defined only by his multiplicity. As lauded a composer as he is revered as one of the great bassists and musicians of his generation, he is critically acclaimed across genres and mediums and boasts a diverse and devoted global audience.
+          </p>
+          <p class="text-[15px] md:text-[17px] text-white60 leading-[1.7] max-w-xl">
+            Growing up just outside Philadelphia, Hodge's talent was quickly recognised by the luminaries of the city's neo-soul movement, and whilst still in college he became the bass player and Musical Director of choice for pioneers including Jill Scott, Maxwell, Floetry, Nas, Common, James Posyer and Musiq Soulchild. Simultaneously he was forging a career in jazz circles with the likes of Terence Blanchard, Donald Byrd, Mulgrew Miller and Bootsie Barnes while also holding a star place in his university's orchestra.
+          </p>
+        </div>
+        <div class="w-full md:w-[440px] aspect-[4/5] shrink-0 rounded overflow-hidden">
+          <img src="/Photos/derrick-hodge-2.jpg" alt="Derrick Hodge" class="w-full h-full object-cover">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- DISCIPLINES -->
+  <section class="bg-bg py-24 md:py-32 px-6 md:px-10">
+    <div class="max-w-[1200px] mx-auto">
+      <p class="text-[11px] text-accent uppercase tracking-[0.12em] mb-16">Disciplines</p>
+
+      <!-- Composer -->
+      <div class="border-t border-white10 py-16 md:py-20">
+        <div class="grid md:grid-cols-[280px_1fr] gap-10 md:gap-16">
+          <div>
+            <h2 class="text-[22px] md:text-[28px] font-bold uppercase tracking-[-0.01em]">Composer</h2>
+          </div>
+          <div>
+            <p class="text-[15px] md:text-[17px] text-white60 leading-[1.7] mb-6">
+              Hodge's compositional voice bridges the concert hall and the cinema. His original orchestral works include <em>Mind of a Dreamer Suite</em> and <em>Infinite Reflections</em>, pieces that weave hip-hop sensibility into symphonic structures with a fluency that has made him a sought-after voice in both worlds.
+            </p>
+            <p class="text-[15px] md:text-[17px] text-white60 leading-[1.7] mb-6">
+              He was commissioned by the Smithsonian's National Museum of African American History and Culture to write the installation music for their permanent exhibit <em>The Power of Place</em>, exploring how Oak's Bluff became a place of collective imagining, struggle, achievement and freedom for a burgeoning African American community. He went on to compose for <em>Social Dance</em> and the <em>Making A Way</em> exhibit, paying tribute to the creativity, agency and resilience with which individual African Americans crafted opportunity in the face of racial oppression.
+            </p>
+            <p class="text-[15px] md:text-[17px] text-white60 leading-[1.7]">
+              As a Blue Note Recording Artist, Hodge has released three critically acclaimed solo projects: <em>Live Today</em> (2013), <em>The Second</em> (2016), and <em>Color of Noize</em> (2020). His albums are rich, raw and revelatory — reflecting everything from his roots in the church to an undercurrent of hip-hop and eternal reverence for melody and classical composition.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Arranger & Conductor -->
+      <div class="border-t border-white10 py-16 md:py-20">
+        <div class="grid md:grid-cols-[280px_1fr] gap-10 md:gap-16">
+          <div>
+            <h2 class="text-[22px] md:text-[28px] font-bold uppercase tracking-[-0.01em]">Arranger &amp; Conductor</h2>
+          </div>
+          <div>
+            <p class="text-[15px] md:text-[17px] text-white60 leading-[1.7] mb-6">
+              The trust and admiration Hodge commands among musicians — and the expertise he commands in his craft — is unparalleled, and has seen him play a foundational role in a wealth of groundbreaking orchestral projects.
+            </p>
+            <p class="text-[15px] md:text-[17px] text-white60 leading-[1.7] mb-8">
+              Orchestral arrangements and conducting for the 94th Academy Awards, Grammy Awards 2022, Super Bowl LVI "Lift Every Voice" performance, Atlanta Symphony with Jeezy, National Symphony Orchestra with Nas, and LA Philharmonic collaborations with H.E.R., Gwen Stefani, and Christina Aguilera.
+            </p>
+            <p class="text-[11px] text-accent uppercase tracking-[0.12em] mb-6">Select Symphonic Credits</p>
+            <div>
+              <div class="credit-row">
+                <span class="year">2022</span>
+                <span class="desc">Academy Awards — Conductor &amp; Arranger for Orchestra</span>
+                <span class="tag">Oscars</span>
+              </div>
+              <div class="credit-row">
+                <span class="year">2022</span>
+                <span class="desc">GRAMMYs, Nas segment — Arranger</span>
+                <span class="tag">Grammy</span>
+              </div>
+              <div class="credit-row">
+                <span class="year">2022</span>
+                <span class="desc">Juneteenth Celebration, Hollywood Bowl for CNN — Conductor &amp; Arranger</span>
+                <span class="tag">CNN</span>
+              </div>
+              <div class="credit-row">
+                <span class="year">2022</span>
+                <span class="desc">Robert Glasper Interprets Duke Ellington with Recollective Orchestra — Conductor &amp; Arranger</span>
+                <span class="tag"></span>
+              </div>
+              <div class="credit-row">
+                <span class="year">2022</span>
+                <span class="desc">LA Phil with H.E.R., Gwen Stefani, Christina Aguilera — Arranger</span>
+                <span class="tag">LA Phil</span>
+              </div>
+              <div class="credit-row">
+                <span class="year">2021</span>
+                <span class="desc">LA Phil with Syd — Arranger</span>
+                <span class="tag">LA Phil</span>
+              </div>
+              <div class="credit-row">
+                <span class="year">2018</span>
+                <span class="desc">National Symphony Orchestra with Nas — Arranger</span>
+                <span class="tag">NSO</span>
+              </div>
+              <div class="credit-row">
+                <span class="year">2017</span>
+                <span class="desc">National Symphony Shows with Common — Arranger</span>
+                <span class="tag">NSO</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Musical Director -->
+      <div class="border-t border-white10 py-16 md:py-20">
+        <div class="grid md:grid-cols-[280px_1fr] gap-10 md:gap-16">
+          <div>
+            <h2 class="text-[22px] md:text-[28px] font-bold uppercase tracking-[-0.01em]">Musical Director</h2>
+          </div>
+          <div>
+            <p class="text-[15px] md:text-[17px] text-white60 leading-[1.7] mb-6">
+              A decade of musical direction for Maxwell (2009 &ndash; 2019) cemented Hodge's reputation as one of the most trusted musical directors in the business. His ability to translate an artist's vision into a cohesive live experience — from arrangements to band dynamics to show flow — is unmatched.
+            </p>
+            <p class="text-[15px] md:text-[17px] text-white60 leading-[1.7]">
+              Beyond Maxwell, Hodge has served as Musical Director for Jill Scott, Nas, Common, and other neo-soul and hip-hop pioneers. As a performer, he has founded and played in bands and groups as diverse and influential as R+R=Now, the Robert Glasper Experiment and The Blue Note All Stars, and as a producer he has collaborated with icons including Quincy Jones, Don Was and Common.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Film & Television -->
+      <div class="border-t border-white10 py-16 md:py-20">
+        <div class="grid md:grid-cols-[280px_1fr] gap-10 md:gap-16">
+          <div>
+            <h2 class="text-[22px] md:text-[28px] font-bold uppercase tracking-[-0.01em]">Film &amp; Television</h2>
+          </div>
+          <div>
+            <p class="text-[15px] md:text-[17px] text-white60 leading-[1.7] mb-8">
+              Hodge's impressive portfolio of film composition spans a plethora of small and big screen work. Whilst he often lends his talents to the specific set of cinema and storytelling which chronicles America's Blackness, he is an artist who is deftly attuned to humanity and so his music is uniquely awake to the universal nuances of the human experience.
+            </p>
+            <div>
+              <div class="credit-row">
+                <span class="year">2023</span>
+                <span class="desc">The Best Man: Final Chapters — Directed by Malcolm D. Lee &middot; Music Composer</span>
+                <span class="tag">Series</span>
+              </div>
+              <div class="credit-row">
+                <span class="year">2021 &ndash; 2023</span>
+                <span class="desc">Run the World — S1 &amp; S2 — Directed by Leigh Davenport &amp; Millicent Shelton &middot; Music Composer</span>
+                <span class="tag">Series</span>
+              </div>
+              <div class="credit-row">
+                <span class="year">2022</span>
+                <span class="desc">The System — Directed by Dallas Jackson with Jeremy Piven &amp; Terrence Howard &middot; Composer</span>
+                <span class="tag">Film</span>
+              </div>
+              <div class="credit-row">
+                <span class="year">2020</span>
+                <span class="desc">The Photograph — Directed by Stella Meghie &middot; Score Consultant</span>
+                <span class="tag">Film</span>
+              </div>
+              <div class="credit-row">
+                <span class="year">2020</span>
+                <span class="desc">Antebellum — "Eden" Original Song &middot; Songwriter, Orchestrator / Orchestral Arranger</span>
+                <span class="tag">Film</span>
+              </div>
+              <div class="credit-row">
+                <span class="year"></span>
+                <span class="desc">The Black Candle — Narrated by Ms. Maya Angelou &middot; Composer</span>
+                <span class="tag">Documentary</span>
+              </div>
+              <div class="credit-row">
+                <span class="year"></span>
+                <span class="desc">Fauberg Treme: The Untold Story of Black New Orleans &middot; Composer</span>
+                <span class="tag">Documentary</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Community & Advocacy -->
+      <div class="border-t border-white10 py-16 md:py-20">
+        <div class="grid md:grid-cols-[280px_1fr] gap-10 md:gap-16">
+          <div>
+            <h2 class="text-[22px] md:text-[28px] font-bold uppercase tracking-[-0.01em]">Community &amp; Advocacy</h2>
+          </div>
+          <div>
+            <p class="text-[15px] md:text-[17px] text-white60 leading-[1.7] mb-6">
+              Motif Award recipient — one of the nation's highest honors for child advocacy. Throughout his life, Hodge has devoted himself to projects that elevate and animate the African American legacy: the struggle but also — always — the poetry and the triumph too. It is this ability to honor and advance both culture and people that is the principle thread which weaves together Hodge's work.
+            </p>
+            <p class="text-[15px] md:text-[17px] text-white60 leading-[1.7] mb-6">
+              The Color of Noize project is Hodge's signature concept-series, bringing together contrasting sounds, styles and set-ups to create an immersive and inherently transcendent audio-visual experience. It is also particularly close to Hodge's heart as it opens up not just his music, but also his mission: to create a new, free space for music whilst also championing his community of both established and emerging musicians.
+            </p>
+            <p class="text-[15px] md:text-[17px] text-white60 leading-[1.7]">
+              More than an album, The Color of Noize is an ongoing commitment to artistic excellence and inclusion, in particular the creation of opportunities and broadening of horizons for inner city youth. He first premiered the project in 2019 as part of his Artist Residency at Monterey Jazz Festival, where he brought together a collection of musicians, some as young as 4, on stage with him to explore his original compositions.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- LEGACY OF FIRSTS (Milestones moved from Work page) -->
+  <section id="legacy-of-firsts" class="bg-bg py-24 md:py-32 px-6 md:px-10">
+    <div class="max-w-[1200px] mx-auto">
+      <p class="text-[11px] text-accent uppercase tracking-[0.12em] mb-12">Legacy of Firsts</p>
+
+      <div class="border-t border-white10 py-6 md:py-8">
+        <div class="grid grid-cols-[1fr_auto] md:grid-cols-[200px_1fr_auto] gap-4 md:gap-8 items-start">
+          <h3 class="text-[15px] md:text-[17px] font-bold uppercase tracking-wide">National Symphony</h3>
+          <div class="hidden md:block">
+            <p class="text-[14px] text-white60 leading-[1.6]">First Hip-Hop Composition performed by the National Symphony Orchestra. Orchestral arranger and music director for Nas's <em>Illmatic</em> 20th anniversary at the Kennedy Center, conducted by Steven Reineke. Named by FENDER as one of the top moments in Hip Hop history.</p>
+          </div>
+          <span class="text-[13px] text-white60 uppercase tracking-wide text-right">2014</span>
+        </div>
+        <p class="text-[14px] text-white60 leading-[1.6] mt-3 md:hidden">First Hip-Hop Composition performed by the National Symphony Orchestra. Orchestral arranger and music director for Nas's <em>Illmatic</em> 20th anniversary at the Kennedy Center.</p>
+      </div>
+
+      <div class="border-t border-white10 py-6 md:py-8">
+        <div class="grid grid-cols-[1fr_auto] md:grid-cols-[200px_1fr_auto] gap-4 md:gap-8 items-start">
+          <h3 class="text-[15px] md:text-[17px] font-bold uppercase tracking-wide">Carnegie Hall</h3>
+          <div class="hidden md:block">
+            <p class="text-[14px] text-white60 leading-[1.6]">First Hip-Hop Strings arrangement. String arranger for Mos Def Live at Carnegie Hall — the venue's first full Hip Hop show, a landmark event in the genre's history.</p>
+          </div>
+          <span class="text-[13px] text-white60 uppercase tracking-wide text-right">2008</span>
+        </div>
+        <p class="text-[14px] text-white60 leading-[1.6] mt-3 md:hidden">First Hip-Hop Strings arrangement. String arranger for Mos Def Live at Carnegie Hall — the venue's first full Hip Hop show.</p>
+      </div>
+
+      <div class="border-t border-white10 py-6 md:py-8">
+        <div class="grid grid-cols-[1fr_auto] md:grid-cols-[200px_1fr_auto] gap-4 md:gap-8 items-start">
+          <h3 class="text-[15px] md:text-[17px] font-bold uppercase tracking-wide">94th Academy Awards</h3>
+          <div class="hidden md:block">
+            <p class="text-[14px] text-white60 leading-[1.6]">Lead Orchestrator and Conductor for the 2022 Oscars. Orchestrator and Co-Conductor for the first All-African-American orchestra in Academy Awards history.</p>
+          </div>
+          <span class="text-[13px] text-white60 uppercase tracking-wide text-right">2022</span>
+        </div>
+        <p class="text-[14px] text-white60 leading-[1.6] mt-3 md:hidden">Arranger &amp; Conductor for the first All-African-American orchestra in Academy Awards history.</p>
+      </div>
+
+      <div class="border-t border-white10 py-6 md:py-8">
+        <div class="grid grid-cols-[1fr_auto] md:grid-cols-[200px_1fr_auto] gap-4 md:gap-8 items-start">
+          <h3 class="text-[15px] md:text-[17px] font-bold uppercase tracking-wide">Hollywood Bowl</h3>
+          <div class="hidden md:block">
+            <p class="text-[14px] text-white60 leading-[1.6]">Conductor and Lead Orchestrator for CNN's nationally televised Juneteenth Celebration. Led the first All-African American orchestra to perform on the Hollywood Bowl stage — a historic evening of culture and history in Hollywood.</p>
+          </div>
+          <span class="text-[13px] text-white60 uppercase tracking-wide text-right">2022</span>
+        </div>
+        <p class="text-[14px] text-white60 leading-[1.6] mt-3 md:hidden">Conductor for CNN's Juneteenth Celebration — first All-African American orchestra on the Hollywood Bowl stage.</p>
+      </div>
+
+      <div class="border-t border-b border-white10 py-6 md:py-8">
+        <div class="grid grid-cols-[1fr_auto] md:grid-cols-[200px_1fr_auto] gap-4 md:gap-8 items-start">
+          <h3 class="text-[15px] md:text-[17px] font-bold uppercase tracking-wide">Houston Symphony</h3>
+          <div class="hidden md:block">
+            <p class="text-[14px] text-white60 leading-[1.6]">Creative Director and Symphony Arranger for Common with the Houston Symphony — the first time Hip Hop was ever performed with the Houston Symphony.</p>
+          </div>
+          <span class="text-[13px] text-white60 uppercase tracking-wide text-right">2019</span>
+        </div>
+        <p class="text-[14px] text-white60 leading-[1.6] mt-3 md:hidden">Creative Director for Common with the Houston Symphony — the first Hip Hop performance with the Houston Symphony.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="bg-accent px-6 md:px-10 pt-16 pb-0 overflow-hidden">
+    <div class="max-w-[1200px] mx-auto">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-6 mb-20 md:mb-28">
+        <div>
+          <p class="text-[13px] font-bold uppercase tracking-[0.06em] text-bg">Derrick Hodge</p>
+          <p class="text-[13px] text-bg/60">&copy; 2025</p>
+        </div>
+        <div class="flex flex-col gap-1">
+          <a href="https://www.instagram.com/dhodgeworld/" target="_blank" rel="noopener" class="text-[13px] uppercase tracking-[0.06em] text-bg hover:text-bg/60">Instagram</a>
+          <a href="https://twitter.com/derrickhodge" target="_blank" rel="noopener" class="text-[13px] uppercase tracking-[0.06em] text-bg hover:text-bg/60">X</a>
+          <a href="https://www.facebook.com/officialderrickhodge" target="_blank" rel="noopener" class="text-[13px] uppercase tracking-[0.06em] text-bg hover:text-bg/60">Facebook</a>
+          <a href="https://www.youtube.com/channel/UC6oKX1fwFWFJKclxMdvn3IQ" target="_blank" rel="noopener" class="text-[13px] uppercase tracking-[0.06em] text-bg hover:text-bg/60">YouTube</a>
+        </div>
+        <div class="flex flex-col gap-1">
+          <a href="/" class="text-[13px] uppercase tracking-[0.06em] text-bg hover:text-bg/60">Home</a>
+          <a href="/about.html" class="text-[13px] uppercase tracking-[0.06em] text-bg hover:text-bg/60">About</a>
+          <a href="/work.html" class="text-[13px] uppercase tracking-[0.06em] text-bg hover:text-bg/60">Work</a>
+          <a href="/color-of-noize.html" class="text-[13px] uppercase tracking-[0.06em] text-bg hover:text-bg/60">Color of Noize</a>
+          <a href="/contact.html" class="text-[13px] uppercase tracking-[0.06em] text-bg hover:text-bg/60">Contact</a>
+        </div>
+        <div class="flex flex-col gap-1">
+          <p class="text-[11px] text-bg/60 uppercase tracking-[0.12em] mb-1">Listen</p>
+          <a href="https://open.spotify.com/artist/5MbCkMCaGLj1MFKOC3UN7T" target="_blank" rel="noopener" class="text-[13px] uppercase tracking-[0.06em] text-bg hover:text-bg/60">Spotify</a>
+          <a href="https://music.apple.com/us/artist/derrick-hodge/267498502" target="_blank" rel="noopener" class="text-[13px] uppercase tracking-[0.06em] text-bg hover:text-bg/60">Apple Music</a>
+          <a href="https://tidal.com/browse/artist/4601971" target="_blank" rel="noopener" class="text-[13px] uppercase tracking-[0.06em] text-bg hover:text-bg/60">Tidal</a>
+          <a href="https://music.amazon.com/artists/B001NBNW3I/derrick-hodge" target="_blank" rel="noopener" class="text-[13px] uppercase tracking-[0.06em] text-bg hover:text-bg/60">Amazon Music</a>
+        </div>
+      </div>
+      <div class="overflow-hidden" style="margin-bottom: -0.18em;">
+        <h2 class="text-bg font-black uppercase leading-[0.82] tracking-[-0.04em]" style="font-size: clamp(5rem, 18vw, 18rem);">Derrick Hodge</h2>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    const b1 = document.getElementById('b1');
+    const b2 = document.getElementById('b2');
+    let menuOpen = false;
+    function toggleMenu() {
+      menuOpen = !menuOpen;
+      mobileNav.classList.toggle('open', menuOpen);
+      b1.style.transform = menuOpen ? 'rotate(45deg) translate(3px, 3px)' : '';
+      b2.style.transform = menuOpen ? 'rotate(-45deg) translate(3px, -3px)' : '';
+    }
+    menuBtn.addEventListener('click', toggleMenu);
+  </script>
+
+</body>
+</html>

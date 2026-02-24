@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Derrick Hodge — Composer, Producer, Blue Note Recording Artist</title>
+  <meta name="description" content="The Official Website of Producer, Composer, and Blue Note Recording Artist Derrick Hodge">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bg: '#050505',
+            surface: '#0a0a0a',
+            card: '#111',
+            white60: 'rgba(255,255,255,0.6)',
+            white20: 'rgba(255,255,255,0.2)',
+            white10: 'rgba(255,255,255,0.1)',
+            accent: '#e34510',
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: #050505; color: #fff; }
+
+    .heading-xl {
+      font-size: clamp(3rem, 8vw, 7.5rem);
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+    .heading-lg {
+      font-size: clamp(2rem, 5vw, 4.5rem);
+      line-height: 1;
+      letter-spacing: -0.02em;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .heading-md {
+      font-size: clamp(1.5rem, 3.5vw, 2.75rem);
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    a, button { transition: opacity 0.2s ease, color 0.2s ease; }
+    a:focus-visible, button:focus-visible { outline: 2px solid #e34510; outline-offset: 2px; }
+
+    /* Marquee */
+    .marquee-wrap { overflow: hidden; }
+    .marquee-inner {
+      display: flex;
+      white-space: nowrap;
+      animation: marquee-scroll 20s linear infinite;
+    }
+    @keyframes marquee-scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    @keyframes scroll-hint {
+      0%, 100% { opacity: 0.15; transform: scaleY(0.7); transform-origin: top; }
+      50% { opacity: 0.5; transform: scaleY(1); transform-origin: top; }
+    }
+
+    /* Mobile menu */
+    .mobile-nav { transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+    .mobile-nav.open { transform: translateX(0); }
+
+    /* Placeholder images */
+    .img-placeholder {
+      background: linear-gradient(145deg, #1a1a1a 0%, #0d0d0d 50%, #1a1a1a 100%);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .img-placeholder span {
+      color: rgba(255,255,255,0.08);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <!-- NAVIGATION -->
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-bg/90 backdrop-blur-md">
+    <div class="max-w-[1200px] mx-auto flex items-center justify-between px-6 md:px-10 py-5">
+      <a href="/" class="flex items-center gap-2">
+        <img src="/brand_assets/logo.png" alt="Derrick Hodge" class="h-[80px] w-auto" style="filter: brightness(0) invert(1);">
+      </a>
+      <div class="hidden md:flex items-center gap-2">
+        <nav class="flex items-center gap-6">
+          <a href="/" class="text-[12px] uppercase tracking-[0.08em] text-white hover:text-white">Home</a>
+          <a href="/about.html" class="text-[12px] uppercase tracking-[0.08em] text-white60 hover:text-white">About</a>
+          <a href="/work.html" class="text-[12px] uppercase tracking-[0.08em] text-white60 hover:text-white">Work</a>
+          <a href="/color-of-noize.html" class="text-[12px] uppercase tracking-[0.08em] text-white60 hover:text-white">Color of Noize</a>
+          <a href="/contact.html" class="text-[12px] uppercase tracking-[0.08em] text-white60 hover:text-white">Contact</a>
+        </nav>
+      </div>
+      <button id="menuBtn" class="md:hidden flex flex-col gap-[5px] w-6" aria-label="Menu">
+        <span class="block h-[1.5px] w-full bg-white" id="b1"></span>
+        <span class="block h-[1.5px] w-full bg-white" id="b2"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Nav -->
+  <div id="mobileNav" class="mobile-nav fixed inset-0 z-40 bg-bg flex flex-col items-center justify-center gap-8 md:hidden">
+    <a href="/" class="text-3xl font-bold uppercase" onclick="toggleMenu()">Home</a>
+    <a href="/about.html" class="text-3xl font-bold uppercase" onclick="toggleMenu()">About</a>
+    <a href="/work.html" class="text-3xl font-bold uppercase" onclick="toggleMenu()">Work</a>
+    <a href="/color-of-noize.html" class="text-3xl font-bold uppercase" onclick="toggleMenu()">Color of Noize</a>
+    <a href="/contact.html" class="text-3xl font-bold uppercase" onclick="toggleMenu()">Contact</a>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <!-- HERO — Full-bleed cinematic -->
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <section class="relative h-screen w-full overflow-hidden">
+    <!-- Full-bleed image — edge to edge, no containers -->
+    <img src="/Photos/hero-cinematic.jpg"
+         alt="Derrick Hodge conducting"
+         class="absolute inset-0 w-full h-full object-cover"
+         style="object-position: center 30%;">
+
+    <!-- Top gradient — gentle, for nav legibility -->
+    <div class="absolute inset-x-0 top-0 h-[140px] pointer-events-none"
+         style="background: linear-gradient(to bottom, rgba(5,5,5,0.35) 0%, transparent 100%);"></div>
+
+    <!-- Bottom gradient — cinematic fade, not a flat wash -->
+    <div class="absolute inset-x-0 bottom-0 h-[55%] pointer-events-none"
+         style="background: linear-gradient(to top, rgba(5,5,5,0.9) 0%, rgba(5,5,5,0.5) 30%, transparent 100%);"></div>
+
+    <!-- Film grain texture — analog depth -->
+    <div class="absolute inset-0 pointer-events-none opacity-[0.035] mix-blend-overlay"
+         style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 256 256%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.85%22 numOctaves=%224%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22/%3E%3C/svg%3E'); background-repeat: repeat; background-size: 200px 200px;"></div>
+
+    <!-- Editorial typography — bottom-left anchored, film-poster composition -->
+    <div class="absolute inset-x-0 bottom-0 z-10 px-6 md:px-10 pb-14 md:pb-16">
+      <div class="max-w-[1200px] mx-auto">
+        <p class="text-[10px] md:text-[11px] text-accent uppercase tracking-[0.2em] mb-4 md:mb-5 font-medium">Blue Note Recording Artist</p>
+        <h1>
+          <span class="block text-white font-black uppercase tracking-[-0.03em]"
+                style="font-size: clamp(3.2rem, 11vw, 11rem); line-height: 0.88;">Derrick</span>
+          <span class="block text-white font-black uppercase tracking-[-0.03em]"
+                style="font-size: clamp(3.2rem, 11vw, 11rem); line-height: 0.88;">Hodge</span>
+        </h1>
+        <div class="w-[48px] h-[2px] bg-accent mt-5 md:mt-7 mb-5 md:mb-6"></div>
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-3">
+          <p class="text-[11px] md:text-[12px] text-white60 uppercase tracking-[0.1em]">Composer &middot; Producer &middot; Conductor</p>
+          <p class="hidden md:block text-[11px] text-white/20 italic tracking-[0.02em]">Speaking existence into possibility</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator — subtle vertical line -->
+    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 z-10">
+      <div class="w-[1px] h-7 bg-white/25" style="animation: scroll-hint 2s ease-in-out infinite;"></div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <!-- ABOUT / BIO SECTION (links to /about.html) -->
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <section id="about" class="bg-bg py-32 md:py-40 px-6 md:px-10">
+    <div class="max-w-[1200px] mx-auto">
+      <div class="grid md:grid-cols-[1fr_auto] gap-16 items-start">
+        <div>
+          <p class="text-[11px] text-white60 uppercase tracking-[0.12em] mb-8">About</p>
+          <h2 class="heading-lg mb-8">One of our moment's most complete and complex musicians.</h2>
+          <p class="text-[15px] md:text-[17px] text-white60 leading-[1.7] mb-6 max-w-xl">
+            A prolific composer, musical director, bandleader, producer bassist and advocate, Hodge has played on some of music's most iconic albums, written and performed breakthrough orchestral arrangements and compositions, scored an impressive catalogue of film and television work and created evocative sonic installations for prestigious cultural institutions, all alongside his work as an activist in the field of emerging young musicians.
+          </p>
+          <p class="text-[15px] md:text-[17px] text-white60 leading-[1.7] mb-10 max-w-xl">
+            Two Grammys. Sundance Composer Fellow. Motif Award recipient. His playing on Common's <em>BE</em> has been officially recognized as one of the Top 20 Basslines in Hip Hop History.
+          </p>
+          <a href="/about.html"
+             class="inline-flex items-center gap-2 border border-white20 rounded-full px-6 py-3 text-[11px] font-medium uppercase tracking-[0.08em] text-white60 hover:text-white hover:border-white/40 transition-colors duration-200">
+            Read Full Bio &rarr;
+          </a>
+        </div>
+        <div class="w-full md:w-[480px] aspect-[4/5] shrink-0 rounded overflow-hidden">
+          <img src="/Photos/derrick-hodge-hero.jpg" alt="Derrick Hodge" class="w-full h-full object-cover">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <!-- WORK PREVIEW (links to /work.html) -->
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <section id="work" class="bg-bg py-32 md:py-40 px-6 md:px-10 border-t border-white10">
+    <div class="max-w-[1200px] mx-auto">
+      <p class="text-[11px] text-white60 uppercase tracking-[0.12em] mb-8">Work</p>
+      <h2 class="heading-lg mb-8">Process gives it purpose.</h2>
+      <p class="text-[15px] md:text-[17px] text-white60 leading-[1.7] mb-6 max-w-xl">
+        Three critically acclaimed solo albums on Blue Note Records. Orchestral premieres at the Kennedy Center, Hollywood Bowl, and Carnegie Hall. The first Hip-Hop composition performed by the National Symphony Orchestra. Conductor for the first All-African-American orchestra at the Academy Awards. Film and television scores, Grammy-winning performances, and permanent installations at the Smithsonian. A body of work defined not by genre, but by an unrelenting commitment to speaking existence into possibility.
+      </p>
+      <a href="/work.html"
+         class="inline-flex items-center gap-2 border border-white20 rounded-full px-6 py-3 text-[11px] font-medium uppercase tracking-[0.08em] text-white60 hover:text-white hover:border-white/40 transition-colors duration-200">
+        Explore All Work &rarr;
+      </a>
+    </div>
+  </section>
+
+
+
+
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <!-- COLOR OF NOIZE -->
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <section class="bg-bg py-32 md:py-40 px-6 md:px-10 border-t border-white10">
+    <div class="max-w-[1200px] mx-auto">
+      <div class="grid md:grid-cols-[1fr_auto] gap-16 items-start">
+        <div>
+          <div class="mb-8">
+            <img src="/brand_assets/color-of-noize-logo.png" alt="Color of Noize" class="h-[40px] md:h-[50px] w-auto" style="filter: brightness(0) invert(1);">
+          </div>
+          <h2 class="text-[clamp(2rem,5vw,4.5rem)] font-bold uppercase leading-[1] tracking-[-0.02em] mb-8">Where jazz, hip-hop &amp; classical converge.</h2>
+          <p class="text-[15px] md:text-[17px] text-white60 leading-[1.7] mb-6 max-w-xl">
+            Color of Noize is a musical ensemble founded by Derrick Hodge — over 100 musicians strong — blending jazz, hip-hop, and classical traditions. Built on a mission of artistic excellence, community, and creating pathways for the next generation of Black classical musicians.
+          </p>
+          <p class="text-[15px] md:text-[17px] text-white60 leading-[1.7] mb-10 max-w-xl">
+            From the Super Bowl to collaborations with Jeezy and Ang&eacute;lique Kidjo, and the largest hip-hop orchestra ever set for Las Vegas in 2025.
+          </p>
+          <a href="/color-of-noize.html"
+             class="inline-flex items-center gap-2 border border-white20 rounded-full px-6 py-3 text-[11px] font-medium uppercase tracking-[0.08em] text-white60 hover:text-white hover:border-white/40 transition-colors duration-200">
+            Learn More &rarr;
+          </a>
+        </div>
+        <div class="w-full md:w-[380px] aspect-square shrink-0 rounded overflow-hidden">
+          <img src="/Photos/Derrick Hodge_Conductor_1.jpg" alt="Derrick Hodge conducting the Color of Noize Orchestra" class="w-full h-full object-cover">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <!-- MARQUEE -->
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <section class="bg-bg py-20 md:py-28 marquee-wrap">
+    <div class="marquee-inner">
+      <span class="heading-xl whitespace-nowrap px-4">Compose. <span class="text-white60">&#10035;</span> Produce. <span class="text-white60">&#10035;</span> Perform. <span class="text-white60">&#10035;</span> Create. <span class="text-white60">&#10035;</span> Compose. <span class="text-white60">&#10035;</span> Produce. <span class="text-white60">&#10035;</span> Perform. <span class="text-white60">&#10035;</span> Create. <span class="text-white60">&#10035;</span>&nbsp;</span>
+      <span class="heading-xl whitespace-nowrap px-4">Compose. <span class="text-white60">&#10035;</span> Produce. <span class="text-white60">&#10035;</span> Perform. <span class="text-white60">&#10035;</span> Create. <span class="text-white60">&#10035;</span> Compose. <span class="text-white60">&#10035;</span> Produce. <span class="text-white60">&#10035;</span> Perform. <span class="text-white60">&#10035;</span> Create. <span class="text-white60">&#10035;</span>&nbsp;</span>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <!-- DISCOGRAPHY -->
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <section class="bg-bg py-24 md:py-32 px-6 md:px-10 border-t border-white10">
+    <div class="max-w-[1200px] mx-auto">
+      <p class="text-[11px] text-accent uppercase tracking-[0.12em] mb-12">Discography</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
+        <a href="/works/color-of-noize.html" class="group">
+          <div class="aspect-square mb-4 group-hover:opacity-80 transition-opacity rounded overflow-hidden">
+            <img src="/Photos/color-of-noize-cover.jpg" alt="Color of Noize" class="w-full h-full object-cover">
+          </div>
+          <p class="text-[14px] font-semibold uppercase tracking-wide">Color of Noize</p>
+          <p class="text-[12px] text-white60 mt-1">2020 &middot; Blue Note Records</p>
+        </a>
+        <a href="/works/the-second.html" class="group">
+          <div class="aspect-square mb-4 group-hover:opacity-80 transition-opacity rounded overflow-hidden">
+            <img src="/Photos/the-second-cover.jpg" alt="The Second" class="w-full h-full object-cover">
+          </div>
+          <p class="text-[14px] font-semibold uppercase tracking-wide">The Second</p>
+          <p class="text-[12px] text-white60 mt-1">2016 &middot; Blue Note Records</p>
+        </a>
+        <a href="/works/live-today.html" class="group">
+          <div class="aspect-square mb-4 group-hover:opacity-80 transition-opacity rounded overflow-hidden">
+            <img src="/Photos/live-today-cover.jpg" alt="Live Today" class="w-full h-full object-cover">
+          </div>
+          <p class="text-[14px] font-semibold uppercase tracking-wide">Live Today</p>
+          <p class="text-[12px] text-white60 mt-1">2013 &middot; Blue Note Records</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <!-- FOOTER -->
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <footer class="bg-accent px-6 md:px-10 pt-16 pb-0 overflow-hidden">
+    <div class="max-w-[1200px] mx-auto">
+      <!-- Top info grid -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-6 mb-20 md:mb-28">
+        <!-- Col 1: Name & Copyright -->
+        <div>
+          <p class="text-[13px] font-bold uppercase tracking-[0.06em] text-bg">Derrick Hodge</p>
+          <p class="text-[13px] text-bg/60">&copy; 2025</p>
+        </div>
+        <!-- Col 2: Social (stacked) -->
+        <div class="flex flex-col gap-1">
+          <a href="https://www.instagram.com/dhodgeworld/" target="_blank" rel="noopener" class="text-[13px] uppercase tracking-[0.06em] text-bg hover:text-bg/60">Instagram</a>
+          <a href="https://twitter.com/derrickhodge" target="_blank" rel="noopener" class="text-[13px] uppercase tracking-[0.06em] text-bg hover:text-bg/60">X</a>
+          <a href="https://www.facebook.com/officialderrickhodge" target="_blank" rel="noopener" class="text-[13px] uppercase tracking-[0.06em] text-bg hover:text-bg/60">Facebook</a>
+          <a href="https://www.youtube.com/channel/UC6oKX1fwFWFJKclxMdvn3IQ" target="_blank" rel="noopener" class="text-[13px] uppercase tracking-[0.06em] text-bg hover:text-bg/60">YouTube</a>
+        </div>
+        <!-- Col 3: Navigation -->
+        <div class="flex flex-col gap-1">
+          <a href="/" class="text-[13px] uppercase tracking-[0.06em] text-bg hover:text-bg/60">Home</a>
+          <a href="/about.html" class="text-[13px] uppercase tracking-[0.06em] text-bg hover:text-bg/60">About</a>
+          <a href="/work.html" class="text-[13px] uppercase tracking-[0.06em] text-bg hover:text-bg/60">Work</a>
+          <a href="/color-of-noize.html" class="text-[13px] uppercase tracking-[0.06em] text-bg hover:text-bg/60">Color of Noize</a>
+          <a href="/contact.html" class="text-[13px] uppercase tracking-[0.06em] text-bg hover:text-bg/60">Contact</a>
+        </div>
+        <!-- Col 4: Streaming -->
+        <div class="flex flex-col gap-1">
+          <p class="text-[11px] text-bg/60 uppercase tracking-[0.12em] mb-1">Listen</p>
+          <a href="https://open.spotify.com/artist/5MbCkMCaGLj1MFKOC3UN7T" target="_blank" rel="noopener" class="text-[13px] uppercase tracking-[0.06em] text-bg hover:text-bg/60">Spotify</a>
+          <a href="https://music.apple.com/us/artist/derrick-hodge/267498502" target="_blank" rel="noopener" class="text-[13px] uppercase tracking-[0.06em] text-bg hover:text-bg/60">Apple Music</a>
+          <a href="https://tidal.com/browse/artist/4601971" target="_blank" rel="noopener" class="text-[13px] uppercase tracking-[0.06em] text-bg hover:text-bg/60">Tidal</a>
+          <a href="https://music.amazon.com/artists/B001NBNW3I/derrick-hodge" target="_blank" rel="noopener" class="text-[13px] uppercase tracking-[0.06em] text-bg hover:text-bg/60">Amazon Music</a>
+        </div>
+      </div>
+
+      <!-- Giant name — black on accent, clipped at bottom -->
+      <div class="overflow-hidden" style="margin-bottom: -0.18em;">
+        <h2 class="text-bg font-black uppercase leading-[0.82] tracking-[-0.04em]" style="font-size: clamp(5rem, 18vw, 18rem);">
+          Derrick Hodge
+        </h2>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <!-- SCRIPTS -->
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <script>
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    const b1 = document.getElementById('b1');
+    const b2 = document.getElementById('b2');
+    let menuOpen = false;
+
+    function toggleMenu() {
+      menuOpen = !menuOpen;
+      mobileNav.classList.toggle('open', menuOpen);
+      b1.style.transform = menuOpen ? 'rotate(45deg) translate(3px, 3px)' : '';
+      b2.style.transform = menuOpen ? 'rotate(-45deg) translate(3px, -3px)' : '';
+    }
+    menuBtn.addEventListener('click', toggleMenu);
+  </script>
+
+</body>
+</html>

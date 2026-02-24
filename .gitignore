@@ -1,0 +1,9 @@
+node_modules/
+temporary screenshots/
+.DS_Store
+*.jsonl
+
+# Large originals (web-compressed versions exist)
+Photos/Derrick Hodge_Conductor_2.png
+Photos/Derrick Hodge_Credit_ Oye Diran_4.jpg..jpg
+Photos/Derrick Hodge_Credit_ Oye Diran_5.jpg..jpg

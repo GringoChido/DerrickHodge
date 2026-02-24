@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>National Symphony Orchestra — Derrick Hodge</title>
+  <meta name="description" content="First Hip-Hop Composition performed by the National Symphony Orchestra at the Kennedy Center.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = { theme: { extend: { colors: { bg: '#050505', surface: '#0a0a0a', card: '#111', white60: 'rgba(255,255,255,0.6)', white20: 'rgba(255,255,255,0.2)', white10: 'rgba(255,255,255,0.1)', accent: '#e34510' }, fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] } } } }
+  </script>
+  <style>
+    * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: #050505; color: #fff; }
+    a, button { transition: opacity 0.2s ease, color 0.2s ease; }
+    a:focus-visible { outline: 2px solid #e34510; outline-offset: 2px; }
+    .heading-xl { font-size: clamp(3rem, 8vw, 7.5rem); line-height: 0.95; letter-spacing: -0.02em; font-weight: 800; text-transform: uppercase; }
+    .heading-lg { font-size: clamp(2rem, 5vw, 4.5rem); line-height: 1; letter-spacing: -0.02em; font-weight: 700; text-transform: uppercase; }
+    .mobile-nav { transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+    .mobile-nav.open { transform: translateX(0); }
+  </style>
+</head>
+<body>
+  <header class="fixed top-0 left-0 right-0 z-50 bg-bg/90 backdrop-blur-md">
+    <div class="max-w-[1200px] mx-auto flex items-center justify-between px-6 md:px-10 py-5">
+      <a href="/"><img src="/brand_assets/logo.png" alt="Derrick Hodge" class="h-[80px] w-auto" style="filter: brightness(0) invert(1);"></a>
+      <div class="hidden md:flex items-center gap-2">
+        <nav class="flex items-center gap-6">
+          <a href="/" class="text-[12px] uppercase tracking-[0.08em] text-white60 hover:text-white">Home</a>
+          <a href="/about.html" class="text-[12px] uppercase tracking-[0.08em] text-white60 hover:text-white">About</a>
+          <a href="/work.html" class="text-[12px] uppercase tracking-[0.08em] text-white hover:text-white">Work</a>
+          <a href="/color-of-noize.html" class="text-[12px] uppercase tracking-[0.08em] text-white60 hover:text-white">Color of Noize</a>
+          <a href="/contact.html" class="text-[12px] uppercase tracking-[0.08em] text-white60 hover:text-white">Contact</a>
+        </nav>
+      </div>
+      <button id="menuBtn" class="md:hidden flex flex-col gap-[5px] w-6" aria-label="Menu"><span class="block h-[1.5px] w-full bg-white" id="b1"></span><span class="block h-[1.5px] w-full bg-white" id="b2"></span></button>
+    </div>
+  </header>
+  <div id="mobileNav" class="mobile-nav fixed inset-0 z-40 bg-bg flex flex-col items-center justify-center gap-8 md:hidden">
+    <a href="/" class="text-3xl font-bold uppercase" onclick="toggleMenu()">Home</a>
+    <a href="/about.html" class="text-3xl font-bold uppercase" onclick="toggleMenu()">About</a>
+    <a href="/work.html" class="text-3xl font-bold uppercase" onclick="toggleMenu()">Work</a>
+    <a href="/color-of-noize.html" class="text-3xl font-bold uppercase" onclick="toggleMenu()">Color of Noize</a>
+    <a href="/contact.html" class="text-3xl font-bold uppercase" onclick="toggleMenu()">Contact</a>
+  </div>
+  <section class="relative pt-28 md:pt-32">
+    <div class="max-w-[1200px] mx-auto px-6 md:px-10">
+      <a href="/work.html" class="inline-flex items-center gap-2 text-[12px] text-white60 uppercase tracking-[0.08em] hover:text-white mb-8">&larr; All Work</a>
+      <div class="aspect-[21/9] rounded overflow-hidden"><img src="/Photos/Derrick Hodge_Conductor_1.jpg" alt="National Symphony Orchestra" class="w-full h-full object-cover"></div>
+    </div>
+  </section>
+  <section class="bg-bg py-16 md:py-24 px-6 md:px-10">
+    <div class="max-w-[1200px] mx-auto"><div class="max-w-[720px]">
+      <p class="text-[11px] text-accent uppercase tracking-[0.12em] mb-4">Symphonic &middot; Kennedy Center</p>
+      <h1 class="heading-lg mb-6">National Symphony Orchestra</h1>
+      <p class="text-[13px] text-white60 uppercase tracking-[0.08em] mb-10">2014</p>
+      <p class="text-[15px] md:text-[17px] text-white60 leading-[1.7] mb-6">First Hip-Hop Composition performed by the National Symphony Orchestra. Orchestral arranger and music director for Nas's Illmatic 20th anniversary at the Kennedy Center, conducted by Steven Reineke. Named by FENDER as one of the top moments in Hip Hop history.</p>
+      <p class="text-[15px] md:text-[17px] text-white60 leading-[1.7]">This groundbreaking performance marked the first time a Hip-Hop composition was performed by the National Symphony Orchestra — a milestone that redefined the boundaries of orchestral programming in America. Hodge's arrangements translated the raw energy and lyrical complexity of Nas's seminal album into a symphonic language that honored both traditions, earning widespread critical acclaim and cementing his reputation as a visionary arranger.</p>
+    </div></div>
+  </section>
+  <footer class="bg-accent px-6 md:px-10 pt-16 pb-0 overflow-hidden">
+    <div class="max-w-[1200px] mx-auto">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-6 mb-20 md:mb-28">
+        <div><p class="text-[13px] font-bold uppercase tracking-[0.06em] text-bg">Derrick Hodge</p><p class="text-[13px] text-bg/60">&copy; 2025</p></div>
+        <div class="flex flex-col gap-1"><a href="https://www.instagram.com/dhodgeworld/" target="_blank" rel="noopener" class="text-[13px] uppercase tracking-[0.06em] text-bg hover:text-bg/60">Instagram</a><a href="https://twitter.com/derrickhodge" target="_blank" rel="noopener" class="text-[13px] uppercase tracking-[0.06em] text-bg hover:text-bg/60">X</a><a href="https://www.facebook.com/officialderrickhodge" target="_blank" rel="noopener" class="text-[13px] uppercase tracking-[0.06em] text-bg hover:text-bg/60">Facebook</a><a href="https://www.youtube.com/channel/UC6oKX1fwFWFJKclxMdvn3IQ" target="_blank" rel="noopener" class="text-[13px] uppercase tracking-[0.06em] text-bg hover:text-bg/60">YouTube</a></div>
+        <div class="flex flex-col gap-1"><a href="/" class="text-[13px] uppercase tracking-[0.06em] text-bg hover:text-bg/60">Home</a><a href="/about.html" class="text-[13px] uppercase tracking-[0.06em] text-bg hover:text-bg/60">About</a><a href="/work.html" class="text-[13px] uppercase tracking-[0.06em] text-bg hover:text-bg/60">Work</a><a href="/color-of-noize.html" class="text-[13px] uppercase tracking-[0.06em] text-bg hover:text-bg/60">Color of Noize</a><a href="/contact.html" class="text-[13px] uppercase tracking-[0.06em] text-bg hover:text-bg/60">Contact</a></div>
+        <div class="flex flex-col gap-1"><p class="text-[11px] text-bg/60 uppercase tracking-[0.12em] mb-1">Listen</p><a href="https://open.spotify.com/artist/5MbCkMCaGLj1MFKOC3UN7T" target="_blank" rel="noopener" class="text-[13px] uppercase tracking-[0.06em] text-bg hover:text-bg/60">Spotify</a><a href="https://music.apple.com/us/artist/derrick-hodge/267498502" target="_blank" rel="noopener" class="text-[13px] uppercase tracking-[0.06em] text-bg hover:text-bg/60">Apple Music</a><a href="https://tidal.com/browse/artist/4601971" target="_blank" rel="noopener" class="text-[13px] uppercase tracking-[0.06em] text-bg hover:text-bg/60">Tidal</a><a href="https://music.amazon.com/artists/B001NBNW3I/derrick-hodge" target="_blank" rel="noopener" class="text-[13px] uppercase tracking-[0.06em] text-bg hover:text-bg/60">Amazon Music</a></div>
+      </div>
+      <div class="overflow-hidden" style="margin-bottom: -0.18em;"><h2 class="text-bg font-black uppercase leading-[0.82] tracking-[-0.04em]" style="font-size: clamp(5rem, 18vw, 18rem);">Derrick Hodge</h2></div>
+    </div>
+  </footer>
+  <script>const menuBtn=document.getElementById('menuBtn');const mobileNav=document.getElementById('mobileNav');const b1=document.getElementById('b1');const b2=document.getElementById('b2');let menuOpen=false;function toggleMenu(){menuOpen=!menuOpen;mobileNav.classList.toggle('open',menuOpen);b1.style.transform=menuOpen?'rotate(45deg) translate(3px, 3px)':'';b2.style.transform=menuOpen?'rotate(-45deg) translate(3px, -3px)':'';}menuBtn.addEventListener('click',toggleMenu);</script>
+</body>
+</html>

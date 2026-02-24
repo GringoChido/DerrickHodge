@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color of Noize — Derrick Hodge</title>
+  <meta name="description" content="Color of Noize — A musical ensemble founded by Derrick Hodge blending jazz, hip-hop, and classical traditions. Artistic excellence, community, and the next generation of Black classical musicians.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bg: '#050505',
+            surface: '#0a0a0a',
+            card: '#111',
+            white60: 'rgba(255,255,255,0.6)',
+            white20: 'rgba(255,255,255,0.2)',
+            white10: 'rgba(255,255,255,0.1)',
+            accent: '#e34510',
+          },
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+        }
+      }
+    }
+  </script>
+  <style>
+    * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: #050505; color: #fff; }
+    a, button { transition: opacity 0.2s ease, color 0.2s ease; }
+    a:focus-visible { outline: 2px solid #e34510; outline-offset: 2px; }
+    .img-placeholder {
+      background: linear-gradient(145deg, #1a1a1a 0%, #0d0d0d 50%, #1a1a1a 100%);
+      border-radius: 4px; display: flex; align-items: center; justify-content: center;
+    }
+    .img-placeholder span { color: rgba(255,255,255,0.08); font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-bg/90 backdrop-blur-md">
+    <div class="max-w-[1200px] mx-auto flex items-center justify-between px-6 md:px-10 py-5">
+      <a href="/" class="flex items-center gap-2"><img src="/brand_assets/logo.png" alt="Derrick Hodge" class="h-[80px] w-auto" style="filter: brightness(0) invert(1);"></a>
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="/" class="text-[12px] uppercase tracking-[0.08em] text-white60 hover:text-white">Home</a>
+        <a href="/about.html" class="text-[12px] uppercase tracking-[0.08em] text-white60 hover:text-white">About</a>
+        <a href="/work.html" class="text-[12px] uppercase tracking-[0.08em] text-white60 hover:text-white">Work</a>
+        <a href="/color-of-noize.html" class="text-[12px] uppercase tracking-[0.08em] text-white hover:text-white">Color of Noize</a>
+        <a href="/contact.html" class="text-[12px] uppercase tracking-[0.08em] text-white60 hover:text-white">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="min-h-[80vh] flex flex-col items-center justify-center text-center px-6 pt-40 pb-20">
+    <div class="mb-10">
+      <img src="/brand_assets/color-of-noize-logo.png" alt="Color of Noize" class="h-[60px] md:h-[80px] w-auto mx-auto" style="filter: brightness(0) invert(1);">
+    </div>
+    <p class="text-[14px] md:text-[18px] uppercase tracking-[0.12em] text-white60 mb-6">Musical Ensemble · Founded by Derrick Hodge</p>
+    <h1 class="font-black uppercase leading-[0.95] tracking-[-0.02em] mb-10" style="font-size: clamp(3rem, 8vw, 7rem);">
+      Color of Noize
+    </h1>
+    <p class="text-[14px] md:text-[16px] uppercase text-white60 leading-[1.6] max-w-[700px] tracking-wide">
+      Where jazz, hip-hop, and classical converge. Over 100 musicians strong. Artistic excellence, community, and the next generation of Black classical musicians.
+    </p>
+  </section>
+
+  <!-- HERO IMAGE -->
+  <section class="px-6 md:px-10 pb-20">
+    <div class="max-w-[960px] mx-auto">
+      <div class="aspect-video max-w-[800px] mx-auto rounded overflow-hidden">
+        <img src="/Photos/Derrick Hodge_Conductor_1.jpg" alt="Derrick Hodge conducting the Color of Noize Orchestra" class="w-full h-full object-cover">
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION & VISION -->
+  <section class="px-6 md:px-10 py-20 md:py-32">
+    <div class="max-w-[960px] mx-auto">
+      <p class="text-[11px] text-white60 uppercase tracking-[0.12em] mb-8">Mission</p>
+      <p class="text-[16px] md:text-[20px] uppercase text-white60 leading-[1.6] tracking-wide mb-12">
+        Color of Noize is a musical ensemble founded by Derrick Hodge that blends jazz, hip-hop, and classical traditions into a singular orchestral force. At its core, the project is built on a dual mission: artistic excellence and community — championing Black classical musicians and creating pathways for inner-city youth into orchestral music.
+      </p>
+      <p class="text-[16px] md:text-[20px] uppercase text-white60 leading-[1.6] tracking-wide mb-12">
+        With ensembles exceeding 100 musicians at a time — featuring large string sections alongside horns, rhythm, and electronics — Color of Noize redefines what an orchestra looks like, sounds like, and who it serves. Every performance is both a concert and a statement of possibility.
+      </p>
+    </div>
+  </section>
+
+  <!-- KEY HIGHLIGHTS -->
+  <section class="px-6 md:px-10 py-20 md:py-32 border-t border-white10">
+    <div class="max-w-[960px] mx-auto">
+      <p class="text-[11px] text-white60 uppercase tracking-[0.12em] mb-12">Highlights</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+        <div class="border border-white10 rounded px-6 py-6">
+          <p class="text-[11px] text-white60 uppercase tracking-[0.12em] mb-3">2025</p>
+          <p class="text-[14px] font-semibold uppercase tracking-wide mb-2">Largest Hip-Hop Orchestra Set</p>
+          <p class="text-[13px] text-white60 leading-[1.6]">Color of Noize is set to debut the largest hip-hop orchestra ever assembled in Las Vegas — a landmark production scaling orchestral hip-hop to arena-level ambition.</p>
+        </div>
+
+        <div class="border border-white10 rounded px-6 py-6">
+          <p class="text-[11px] text-white60 uppercase tracking-[0.12em] mb-3">Super Bowl</p>
+          <p class="text-[14px] font-semibold uppercase tracking-wide mb-2">Super Bowl Performance</p>
+          <p class="text-[13px] text-white60 leading-[1.6]">Color of Noize brought orchestral power to one of the world's biggest stages, performing at the Super Bowl and proving that classical and hip-hop belong side by side at the highest level.</p>
+        </div>
+
+        <div class="border border-white10 rounded px-6 py-6">
+          <p class="text-[11px] text-accent uppercase tracking-[0.12em] mb-3">Collaboration</p>
+          <p class="text-[14px] font-semibold uppercase tracking-wide mb-2">Jeezy</p>
+          <p class="text-[13px] text-white60 leading-[1.6]">A collaboration with Jeezy that layers trap and Southern hip-hop over full orchestral arrangements — demonstrating the ensemble's range and cultural fluency.</p>
+        </div>
+
+        <div class="border border-white10 rounded px-6 py-6">
+          <p class="text-[11px] text-accent uppercase tracking-[0.12em] mb-3">Collaboration</p>
+          <p class="text-[14px] font-semibold uppercase tracking-wide mb-2">Ang&eacute;lique Kidjo</p>
+          <p class="text-[13px] text-white60 leading-[1.6]">Partnering with the legendary Ang&eacute;lique Kidjo, Color of Noize expanded its sonic palette to embrace Afrobeat and West African musical traditions within its orchestral framework.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMUNITY & YOUTH -->
+  <section class="px-6 md:px-10 py-20 md:py-32 border-t border-white10">
+    <div class="max-w-[960px] mx-auto">
+      <div class="grid md:grid-cols-[1fr_1fr] gap-16 items-start">
+        <div>
+          <p class="text-[11px] text-white60 uppercase tracking-[0.12em] mb-8">Community</p>
+          <h2 class="text-[clamp(1.5rem,3.5vw,2.75rem)] font-bold uppercase leading-[1.1] tracking-[-0.01em] mb-8">Building the next generation.</h2>
+          <p class="text-[15px] md:text-[17px] text-white60 leading-[1.7] mb-6">
+            Beyond the stage, Color of Noize is a vehicle for access and opportunity. The project actively recruits and mentors inner-city youth, introducing them to orchestral instruments and composition — creating a pipeline into classical music that has historically excluded Black communities.
+          </p>
+          <p class="text-[15px] md:text-[17px] text-white60 leading-[1.7]">
+            Hodge's vision goes beyond performance. Each Color of Noize event is a chance to show young musicians that the orchestra is theirs too — that their stories, rhythms, and traditions belong in every concert hall, arena, and amphitheater.
+          </p>
+        </div>
+        <div class="aspect-[4/5] rounded overflow-hidden">
+          <img src="/Photos/Derek-Hodge_KevinMohatt.jpg" alt="Derrick Hodge with bass" class="w-full h-full object-cover">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENSEMBLE DETAILS -->
+  <section class="px-6 md:px-10 py-20 md:py-32 border-t border-white10">
+    <div class="max-w-[960px] mx-auto">
+      <p class="text-[11px] text-white60 uppercase tracking-[0.12em] mb-12">The Ensemble</p>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div>
+          <p class="text-[clamp(2rem,4vw,3.5rem)] font-black uppercase tracking-[-0.02em]">100+</p>
+          <p class="text-[12px] text-white60 uppercase tracking-[0.08em] mt-2">Musicians</p>
+        </div>
+        <div>
+          <p class="text-[clamp(2rem,4vw,3.5rem)] font-black uppercase tracking-[-0.02em] text-accent">3</p>
+          <p class="text-[12px] text-white60 uppercase tracking-[0.08em] mt-2">Genres Fused</p>
+        </div>
+        <div>
+          <p class="text-[clamp(2rem,4vw,3.5rem)] font-black uppercase tracking-[-0.02em]">1</p>
+          <p class="text-[12px] text-white60 uppercase tracking-[0.08em] mt-2">Mission</p>
+        </div>
+        <div>
+          <p class="text-[clamp(2rem,4vw,3.5rem)] font-black uppercase tracking-[-0.02em] text-accent">&infin;</p>
+          <p class="text-[12px] text-white60 uppercase tracking-[0.08em] mt-2">Possibility</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA / CONNECT -->
+  <section class="px-6 md:px-10 py-20 md:py-32 border-t border-white10 text-center">
+    <div class="max-w-[960px] mx-auto">
+      <p class="text-[11px] text-white60 uppercase tracking-[0.12em] mb-8">Connect</p>
+      <h2 class="text-[clamp(1.5rem,3.5vw,2.75rem)] font-bold uppercase leading-[1.1] tracking-[-0.01em] mb-8">Join the movement.</h2>
+      <p class="text-[15px] md:text-[17px] text-white60 leading-[1.7] mb-10 max-w-lg mx-auto">
+        For booking, partnership, or community program inquiries related to Color of Noize, reach out to the team.
+      </p>
+      <a href="mailto:info@secondsonproductions.com"
+         class="inline-flex items-center gap-2 border border-white20 rounded-full px-6 py-3 text-[11px] font-medium uppercase tracking-[0.08em] text-white60 hover:text-white hover:border-white/40 transition-colors duration-200">
+        Get In Touch &rarr;
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-accent px-6 md:px-10 pt-16 pb-0 overflow-hidden">
+    <div class="max-w-[1200px] mx-auto">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-6 mb-20 md:mb-28">
+        <div>
+          <p class="text-[13px] font-bold uppercase tracking-[0.06em] text-bg">Derrick Hodge</p>
+          <p class="text-[13px] text-bg/60">&copy; 2025</p>
+        </div>
+        <div class="flex flex-col gap-1">
+          <a href="https://www.instagram.com/dhodgeworld/" target="_blank" rel="noopener" class="text-[13px] uppercase tracking-[0.06em] text-bg hover:text-bg/60">Instagram</a>
+          <a href="https://twitter.com/derrickhodge" target="_blank" rel="noopener" class="text-[13px] uppercase tracking-[0.06em] text-bg hover:text-bg/60">X</a>
+          <a href="https://www.facebook.com/officialderrickhodge" target="_blank" rel="noopener" class="text-[13px] uppercase tracking-[0.06em] text-bg hover:text-bg/60">Facebook</a>
+          <a href="https://www.youtube.com/channel/UC6oKX1fwFWFJKclxMdvn3IQ" target="_blank" rel="noopener" class="text-[13px] uppercase tracking-[0.06em] text-bg hover:text-bg/60">YouTube</a>
+        </div>
+        <div class="flex flex-col gap-1">
+          <a href="/" class="text-[13px] uppercase tracking-[0.06em] text-bg hover:text-bg/60">Home</a>
+          <a href="/about.html" class="text-[13px] uppercase tracking-[0.06em] text-bg hover:text-bg/60">About</a>
+          <a href="/work.html" class="text-[13px] uppercase tracking-[0.06em] text-bg hover:text-bg/60">Work</a>
+          <a href="/color-of-noize.html" class="text-[13px] uppercase tracking-[0.06em] text-bg hover:text-bg/60">Color of Noize</a>
+          <a href="/contact.html" class="text-[13px] uppercase tracking-[0.06em] text-bg hover:text-bg/60">Contact</a>
+        </div>
+        <div class="flex flex-col gap-1">
+          <p class="text-[11px] text-bg/60 uppercase tracking-[0.12em] mb-1">Listen</p>
+          <a href="https://open.spotify.com/artist/5MbCkMCaGLj1MFKOC3UN7T" target="_blank" rel="noopener" class="text-[13px] uppercase tracking-[0.06em] text-bg hover:text-bg/60">Spotify</a>
+          <a href="https://music.apple.com/us/artist/derrick-hodge/267498502" target="_blank" rel="noopener" class="text-[13px] uppercase tracking-[0.06em] text-bg hover:text-bg/60">Apple Music</a>
+          <a href="https://tidal.com/browse/artist/4601971" target="_blank" rel="noopener" class="text-[13px] uppercase tracking-[0.06em] text-bg hover:text-bg/60">Tidal</a>
+          <a href="https://music.amazon.com/artists/B001NBNW3I/derrick-hodge" target="_blank" rel="noopener" class="text-[13px] uppercase tracking-[0.06em] text-bg hover:text-bg/60">Amazon Music</a>
+        </div>
+      </div>
+      <div class="overflow-hidden" style="margin-bottom: -0.18em;">
+        <h2 class="text-bg font-black uppercase leading-[0.82] tracking-[-0.04em]" style="font-size: clamp(5rem, 18vw, 18rem);">Derrick Hodge</h2>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
