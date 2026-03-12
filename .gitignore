@@ -1,9 +1,29 @@
+# dependencies
 node_modules/
-temporary screenshots/
-.DS_Store
-*.jsonl
+.pnp
+.pnp.js
 
-# Large originals (web-compressed versions exist)
-Photos/Derrick Hodge_Conductor_2.png
-Photos/Derrick Hodge_Credit_ Oye Diran_4.jpg..jpg
-Photos/Derrick Hodge_Credit_ Oye Diran_5.jpg..jpg
+# env files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env*.local
+
+# build
+dist/
+build/
+.next/
+out/
+
+# misc
+.DS_Store
+*.log
+npm-debug.log*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo

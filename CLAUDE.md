@@ -84,3 +84,65 @@ Before writing any code, study the source material. One or more of these will be
 * Do not stop after one screenshot pass
 * Do not use transition-all
 * Do not use default Tailwind blue/indigo as primary color
+
+## Design System
+
+### Aesthetic
+Cinematic prestige editorial portfolio for a two-time Grammy-winning musical architect. Dark, authoritative, and confident — like a film title card or concert poster come to life. Bridges the gravitas of the symphony hall with the raw energy of hip-hop culture through condensed display typography, a minimal burnt-orange accent, and textured depth.
+Star of the show: Full-bleed cinematic hero with film grain texture and oversized Bebas Neue name, plus accent-orange footer with clipped oversized name.
+Visual rhyming: Uppercase tracking system across all labels and headings, burnt orange (#e34510) used surgically on section labels/hover/footer, border-white10 dividers create editorial rhythm, film grain texture at varying opacities.
+
+### Fonts
+- **Display**: Bebas Neue (headings, hero text, footer name) — 400
+- **Body**: Inter (paragraphs, UI text, labels, navigation) — 300, 400, 500, 600, 700
+- Source: Google Fonts (next/font/google)
+
+### Colors
+- **Background**: #050505 (Near Black)
+- **Surface**: #0a0a0a (Dark Surface)
+- **Card**: #111111 (Card Dark)
+- **Text**: #FFFFFF (White)
+- **Text Secondary**: rgba(255,255,255,0.6) (White 60%)
+- **Text Tertiary**: rgba(255,255,255,0.2) (White 20%)
+- **Accent**: #e34510 (Burnt Orange)
+- **Accent Dark**: #B83A0E (Deep Orange — active/pressed)
+- **Accent Glow**: rgba(227,69,16,0.15) (Color-tinted hover shadows)
+- **Border**: rgba(255,255,255,0.1) (White 10%)
+- **Border Hover**: rgba(255,255,255,0.25) (White 25%)
+- **Warm White**: #F5F0E8 (Cream — pull quotes, highlights)
+
+### Typography Classes
+- `.heading-hero` — Bebas Neue, clamp(3.2rem, 11vw, 11rem), -0.03em tracking, line-height 0.88, uppercase
+- `.heading-xl` — Bebas Neue, clamp(3rem, 8vw, 7.5rem), -0.02em tracking, line-height 0.95, uppercase
+- `.heading-lg` — Bebas Neue, clamp(2rem, 5vw, 4.5rem), -0.02em tracking, line-height 1, uppercase
+- `.heading-md` — Bebas Neue, clamp(1.5rem, 3.5vw, 2.75rem), -0.01em tracking, line-height 1.1, uppercase
+- `.heading-sm` — Inter, clamp(1.125rem, 2vw, 1.375rem), 700 weight, -0.01em tracking, uppercase
+- `.footer-name` — Bebas Neue, clamp(5rem, 18vw, 18rem), -0.04em tracking, line-height 0.82, uppercase
+- `.section-label` — Inter, 0.6875rem, 500 weight, 0.12em tracking, uppercase, accent color
+- `.body-lg` — Inter, 1.0625rem, line-height 1.7, text-secondary color
+- `.nav-link` — Inter, 0.75rem, 400 weight, 0.08em tracking, uppercase, text-secondary color
+
+### Button Classes
+- `.btn-pill` — Border border-white25, rounded-full, px-6 py-3, Inter 0.6875rem uppercase, 0.08em tracking, arrow suffix →
+
+### Design Rules
+- Type scale: Fluid with clamp() — Bebas Neue for display, Inter for body/UI
+- Spacing: 8pt grid (Tailwind default multiples of 4/8)
+- Container: max-w-[75rem], px-6 mobile / px-10 desktop
+- Section padding: py-24 md:py-32 (standard), py-32 md:py-40 (major)
+- Shadows: Color-tinted accent glow rgba(227,69,16,0.15) on hover states
+- Border radius: rounded-md for cards, rounded-full for pill buttons
+- Animations: Framer Motion — fade up + translateY(20px→0) on scroll, 0.6s ease-out, stagger 0.1s. Only animate transform and opacity. Respect prefers-reduced-motion.
+- Depth: Film grain SVG noise at 3.5% hero / 2% sections. Three-tier surface system (bg → surface → card). Gradient transitions between sections.
+- Hero: Full-bleed image, no entrance animation, instant presence. Film grain is the only motion.
+- Marquee: Continuous CSS horizontal scroll, Bebas Neue heading-xl, 20s linear infinite.
+
+### Layout Patterns
+- Container: max-w-[75rem], px-6 sm:px-10
+- Section padding: py-24 md:py-32 default, py-32 md:py-40 major sections
+- Hero (Home): Full-viewport image, edge-to-edge, dual gradients, film grain overlay, bottom-left Bebas Neue name
+- Hero (Interior): min-h-[60vh], bottom-aligned text, accent label + Bebas heading, no image
+- Navigation: Fixed header, bg-bg/90 backdrop-blur, logo left, inline nav right (desktop), hamburger overlay (mobile)
+- Project Cards: Border border-white10, rounded-md, 16:10 image with hover scale(1.03), card lift translateY(-2px)
+- Credit Rows: Grid year|description|tag, border-top white10, Inter 13px
+- Footer: Full accent-orange background, 4-column info grid, oversized clipped Bebas Neue name at bottom

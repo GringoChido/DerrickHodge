@@ -17,6 +17,22 @@ const browser = await puppeteer.launch({ headless: true });
 const page = await browser.newPage();
 await page.setViewport({ width: 1440, height: 900 });
 await page.goto(url, { waitUntil: "networkidle2", timeout: 15000 });
+
+// Scroll through the entire page to trigger whileInView animations
+await page.evaluate(async () => {
+  const distance = 400;
+  const delay = 100;
+  const scrollHeight = document.body.scrollHeight;
+  let currentPosition = 0;
+  while (currentPosition < scrollHeight) {
+    window.scrollBy(0, distance);
+    currentPosition += distance;
+    await new Promise(r => setTimeout(r, delay));
+  }
+  // Wait for all animations to complete
+  await new Promise(r => setTimeout(r, 800));
+});
+
 await page.screenshot({ path: outPath, fullPage: true });
 await browser.close();
 
